@@ -1,5 +1,18 @@
 from game_logic import game 
 
+def find_winner_if_tie(p1: dict, p2: dict):
+    if find_heart_count(p1) > find_heart_count(p2):
+        print(f"{game_dict["player1"]["name"]} won the game! ")
+    elif find_heart_count(p2) > find_heart_count(p1):
+        print(f"{game_dict["player2"]["name"]} won the game! ")
+
+
+def find_heart_count(player: dict):
+    hearts_count = 0 
+    for card in player["hand"]:
+        if card["rand"] == "H":
+            hearts_count += 1
+    return hearts_count
 
 if __name__ == "__main__":
     game_dict = game.init_game()
@@ -16,19 +29,7 @@ if __name__ == "__main__":
         print("TIE, nobody won the game! ")
 
 
-def find_winner_if_tie(p1: dict, p2: dict):
-    if find_heart_count(p1) > find_heart_count(p2):
-        print(f"{game_dict["player1"]["name"]} won the game! ")
-    elif find_heart_count(p2) > find_heart_count(p1):
-        print(f"{game_dict["player2"]["name"]} won the game! ")
 
-
-def find_heart_count(player: dict):
-    hearts_count = 0 
-    for card in player["hand"]:
-        if card["rand"] == "H":
-            hearts_count += 1
-    return hearts_count
 
 
 
