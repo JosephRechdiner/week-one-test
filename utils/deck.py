@@ -13,7 +13,6 @@ def create_card(rank: str, suite: str) -> dict:
     return {"rank": rank, "suite": suite, "value": special_ranks[rank]}
     
 
-
 def compare_cards(p1_card: dict, p2_card: dict) -> str:
     if p1_card["value"] > p2_card["value"]:
         return "p1"

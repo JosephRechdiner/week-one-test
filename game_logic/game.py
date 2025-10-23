@@ -36,5 +36,29 @@ def play_round(p1: dict, p2: dict):
 
     if winner == "WAR":
         print(winner)
+        # BONUS
+        # war_round(p1, p2)
     else:
         print(f"{winner} won the game! ")
+
+temp_hands = []
+def war_round(p1: dict, p2: dict):
+    global temp_hand
+    for _ in range(3):
+        temp_hands.append(p1["hand"].pop(0))
+        temp_hands.append(p2["hand"].pop(0))
+
+    next_round_winner = play_round(p1, p2)
+    if next_round_winner == "p1":
+        for temp_hand in temp_hands:
+            p1["won_pile"].append(temp_hand)
+
+    elif next_round_winner == "p2":
+        for temp_hand in temp_hands:
+            p2["won_pile"].append(temp_hand)
+
+    temp_hands = []
+
+
+
+
