@@ -58,7 +58,7 @@ def shuffle(deck: list[dict]) -> list[dict]:
 
     return deck
 
-# d = create_deck()
-# d = shuffle(d)
-# print(len(d))
-# print(d)
+d = create_deck()
+d = shuffle(d)
+print(len(d))
+print(d)
