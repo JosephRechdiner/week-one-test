@@ -1,3 +1,4 @@
+
 import random
 
 def create_card(rank: str, suite: str) -> dict:
@@ -22,9 +23,6 @@ def compare_cards(p1_card: dict, p2_card: dict) -> str:
     
     return "WAR"
 
-# print(compare_cards({"value": 14, "suite": "H", "rank": "A"}, {"value": 10, "suite": "H", "rank": "10"}))
-# print(compare_cards({"value": 10, "suite": "H", "rank": "10"}, {"value": 14, "suite": "H", "rank": "A"}))
-# print(compare_cards({"value": 10, "suite": "H", "rank": "10"}, {"value": 10, "suite": "H", "rank": "10"}))
 
 def create_deck() -> list[dict]:
     special_ranks = {11 : "J", 
@@ -43,8 +41,6 @@ def create_deck() -> list[dict]:
 
     return cards
 
-# print(len(create_deck()))
-# print(create_deck()[0:4])
 
 def shuffle(deck: list[dict]) -> list[dict]:
     for _ in range(1000):
@@ -58,7 +54,3 @@ def shuffle(deck: list[dict]) -> list[dict]:
 
     return deck
 
-d = create_deck()
-d = shuffle(d)
-print(len(d))
-print(d)
